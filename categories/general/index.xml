@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>General on QGIS México</title>
+    <link>https://qgismexico.gihub.io/categories/general/</link>
+    <description>Recent content in General on QGIS México</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Fri, 07 Oct 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://qgismexico.gihub.io/categories/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bienvenidos al grupo de usuarios de QGIS México</title>
+      <link>https://qgismexico.gihub.io/blog/primera-entrada-del-blog/</link>
+      <pubDate>Fri, 07 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://qgismexico.gihub.io/blog/primera-entrada-del-blog/</guid>
+      <description>Este blog pretende ser una herramienta para publicar artículos, tutoriales, casos de uso entrevistas relacionadas con la comunidad de usuarios de QGIS en México. En las próximas semanas irán publicándose diferentes artículos que trataran temas básicos de la configuración e instalación de QGIS.</description>
+    </item>
+    
+  </channel>
+</rss>

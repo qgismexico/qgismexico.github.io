@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plugins on QGIS México</title>
+    <link>https://qgismexico.gihub.io/categories/plugins/</link>
+    <description>Recent content in Plugins on QGIS México</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 13 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://qgismexico.gihub.io/categories/plugins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Los 10 complementos (plugins) más usados en #QGIS</title>
+      <link>https://qgismexico.gihub.io/blog/los-10-complementos-plugins-mas-usados-en-qgis/</link>
+      <pubDate>Mon, 13 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://qgismexico.gihub.io/blog/los-10-complementos-plugins-mas-usados-en-qgis/</guid>
+      <description>Hola comunidad, de la encuesta realizada en el grupo de usuarios QGIS México se obtiene la siguiente recomendación. Descarguen todos los plugins para usuarios sin acceso a Internet o sigan las recomendaciones de plugins durante una primera instalación, pronto los tutoriales de cada complemento.
+
+Plugin
+Version
+Página oficial
+Archivo comprimido .zip
+ 1.- QuickMapServices
+0.19.3
+QuickMapServices
+QuickMapServices
+ 2.- Semi-Automatic Classification Plugin
+5.3.10
+Semi-Automatic Classification Plugin
+Semi-Automatic Classification Plugin</description>
+    </item>
+    
+    <item>
+      <title>Animación en QGIS con el plugin MMQGIS</title>
+      <link>https://qgismexico.gihub.io/blog/animacion-en-qgis-con-plugin-mmqgis/</link>
+      <pubDate>Mon, 08 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://qgismexico.gihub.io/blog/animacion-en-qgis-con-plugin-mmqgis/</guid>
+      <description>El sábado 29 de Abril de 2017 se celebró el Festival Latinoamericano de Instalación de Software Libre (FLISOL) en el Rancho Electrónico. La comunidad QGIS México asistió con la siguiente presentación llamada &amp;ldquo;Animación de Mapas (Mediante QGIS), explorando la carta Hidrográfica de México&amp;rdquo;.
+En general, la platica se centro en el uso del mapa, como un insumo de información geográfica, parte fundamental de una Sistema de Información Geográfica [Tomlinson, 2008].</description>
+    </item>
+    
+  </channel>
+</rss>
