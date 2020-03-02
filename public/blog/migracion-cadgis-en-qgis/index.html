@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="es">
+  <head>
+  <meta charset="utf-8">
+<title>Migración CAD/GIS en QGIS - QGIS México</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=1" color="#ffffff">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=1">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+<meta name="generator" content="Hugo 0.65.3" /><meta itemprop="name" content="Migración CAD/GIS en QGIS">
+<meta itemprop="description" content="https://www.youtube.com/watch?v=lDS5orJvO4U
+Una de las actividades más recurrentes para los que utilizamos SIG es la manipulación de información CAD. Años de uso y mal uso del software y formato estándar de facto, AutoCAD y su DWG, hacen que hoy en día cada que recibimos información en CAD para procesarla en un SIG.nos encontremos con diferentes situaciones, desde una mala referencia, trazos que no corresponden a su capa, escalado del dibujo, información fuera de la extensión del dibujo y un largo etcétera que se repetirá hasta que los usuarios de CAD no aprendan a trabajar correctamente o simplemente dejen de utilizar dicha plataforma.">
+<meta itemprop="datePublished" content="2016-10-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-10-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="477">
+<meta itemprop="image" content="https://qgismexico.gihub.io/images/screenshot-from-2016-10-16-16-26-44.png">
+
+
+
+<meta itemprop="keywords" content="," /><meta property="og:title" content="Migración CAD/GIS en QGIS" />
+<meta property="og:description" content="https://www.youtube.com/watch?v=lDS5orJvO4U
+Una de las actividades más recurrentes para los que utilizamos SIG es la manipulación de información CAD. Años de uso y mal uso del software y formato estándar de facto, AutoCAD y su DWG, hacen que hoy en día cada que recibimos información en CAD para procesarla en un SIG.nos encontremos con diferentes situaciones, desde una mala referencia, trazos que no corresponden a su capa, escalado del dibujo, información fuera de la extensión del dibujo y un largo etcétera que se repetirá hasta que los usuarios de CAD no aprendan a trabajar correctamente o simplemente dejen de utilizar dicha plataforma." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qgismexico.gihub.io/blog/migracion-cadgis-en-qgis/" />
+<meta property="og:image" content="https://qgismexico.gihub.io/images/screenshot-from-2016-10-16-16-26-44.png" />
+<meta property="article:published_time" content="2016-10-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-10-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://qgismexico.gihub.io/images/screenshot-from-2016-10-16-16-26-44.png"/>
+
+<meta name="twitter:title" content="Migración CAD/GIS en QGIS"/>
+<meta name="twitter:description" content="https://www.youtube.com/watch?v=lDS5orJvO4U
+Una de las actividades más recurrentes para los que utilizamos SIG es la manipulación de información CAD. Años de uso y mal uso del software y formato estándar de facto, AutoCAD y su DWG, hacen que hoy en día cada que recibimos información en CAD para procesarla en un SIG.nos encontremos con diferentes situaciones, desde una mala referencia, trazos que no corresponden a su capa, escalado del dibujo, información fuera de la extensión del dibujo y un largo etcétera que se repetirá hasta que los usuarios de CAD no aprendan a trabajar correctamente o simplemente dejen de utilizar dicha plataforma."/>
+<meta name="twitter:site" content="@qgismexico"/>
+<link rel="stylesheet" href="/css/bundle.min.122bf077d53f56b1f764db5a8c387dd81587f604dbf07bbf3f86a62b06e00ca9.css" integrity="sha256-Eivwd9U/VrH3ZNtajDh92BWH9gTb8Hu/P4amKwbgDKk=">
+        <link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/">
+        
+          
+            Blog
+          
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="/" class="link"><i class='fa fa-home'></i> Inicio</a>
+          
+        
+      
+        
+          
+          
+            <a href="/blog/" class="link"><i class='far fa-newspaper'></i> Blog</a>
+          
+        
+      
+        
+          
+          
+            <a href="/categories/" class="link"><i class='fas fa-sitemap'></i> Categorias</a>
+          
+        
+      
+        
+          
+          
+            <a href="/about/" class="link"><i class='far fa-id-card'></i> Miembros</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+
+    </menu>
+    
+
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="lang-toggle" lang="es">es</a>
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="lang-menu" class="flyout-menu">
+  <a href="#" lang="es" class="link active">Español (es)</a>
+  
+    
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Migraci%c3%b3n%20CAD%2fGIS%20en%20QGIS&amp;url=https%3a%2f%2fqgismexico.gihub.io%2fblog%2fmigracion-cadgis-en-qgis%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fqgismexico.gihub.io%2fblog%2fmigracion-cadgis-en-qgis%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fqgismexico.gihub.io%2fblog%2fmigracion-cadgis-en-qgis%2f&amp;title=Migraci%c3%b3n%20CAD%2fGIS%20en%20QGIS" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by %40yoltoltohua&amp;body=https%3a%2f%2fqgismexico.gihub.io%2fblog%2fmigracion-cadgis-en-qgis%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="/"><img src="/images/logo_qgis.png" class="circle" width="" alt="Hugo Future Imperfect Slim" /></a>
+  <header>
+    <h1>QGIS México</h1>
+  </header>
+  <main>
+    <p>Grupo Oficial de Usuarios</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/qgismexico" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/qgismexico" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/qgismexico" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+<li><a href="//youtube.com/c/QGISM%c3%a9xico" target="_blank" rel="noopener" title="YouTube" class="fab fa-youtube"></a></li>
+
+
+
+
+
+<li><a href="//instagram.com/qgismexico" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/qgismexico" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:qgismexico@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/blog/migracion-cadgis-en-qgis/">Migración CAD/GIS en QGIS</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-10-24 00:00:00 &#43;0000 UTC">
+      24 de Enero, 2016
+    </time>
+    <span class="author">@yoltoltohua</span>
+    
+      <p>3 minutos</p>
+    
+  </div>
+</header>
+
+  <section id="socnet-share">
+    
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Migraci%c3%b3n%20CAD%2fGIS%20en%20QGIS&amp;url=https%3a%2f%2fqgismexico.gihub.io%2fblog%2fmigracion-cadgis-en-qgis%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fqgismexico.gihub.io%2fblog%2fmigracion-cadgis-en-qgis%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fqgismexico.gihub.io%2fblog%2fmigracion-cadgis-en-qgis%2f&amp;title=Migraci%c3%b3n%20CAD%2fGIS%20en%20QGIS" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by %40yoltoltohua&amp;body=https%3a%2f%2fqgismexico.gihub.io%2fblog%2fmigracion-cadgis-en-qgis%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+  </section>
+  
+  <a href="/blog/migracion-cadgis-en-qgis/" class="image featured">
+    
+      <img src="/images/screenshot-from-2016-10-16-16-26-44.png" alt="">
+    
+  </a>
+
+
+  <div class="content">
+    <p><a href="https://www.youtube.com/watch?v=lDS5orJvO4U">https://www.youtube.com/watch?v=lDS5orJvO4U</a></p>
+<p>Una de las actividades más recurrentes para los que utilizamos SIG es la manipulación de información CAD. Años de uso y mal uso del software y formato estándar de facto, AutoCAD y su DWG, hacen que hoy en día cada que recibimos información en CAD para procesarla en un SIG.nos encontremos con diferentes situaciones, desde una mala referencia, trazos que no corresponden a su capa, escalado del dibujo, información fuera de la extensión del dibujo y un largo etcétera que se repetirá hasta que los usuarios de CAD no aprendan a trabajar correctamente o simplemente dejen de utilizar dicha plataforma.</p>
+<p>Para la migración CAD/GIS que mostramos, nos vamos a centrar únicamente en la conversión de geometrías con sus respectivas capas. Para esto vamos a apoyarnos del software CAD de descarga gratuita Draftsight:</p>
+<p><a href="http://www.3ds.com/products-services/draftsight-cad-software/free-download/">http://www.3ds.com/products-services/draftsight-cad-software/free-download/</a></p>
+<p>La principal razón es simplemente para la conversión DGW a DXF, si contamos con el software AutoCAD, también desde ahí se puede hacer la conversión o con cualquier otro software, lo importante es que la información vectorial se encuentre en DXF ya que es el formato que admite QGIS.</p>
+<p><img src="https://qgismx.files.wordpress.com/2016/10/screenshot-from-2016-10-16-16-16-03.png?w=1024" alt="screenshot-from-2016-10-16-16-16-03"></p>
+<p><em>Recomendaciones mínimas (ya que estamos en un entorno CAD):</em></p>
+<ul>
+<li><em>Todas las capas encendidas</em></li>
+<li><em>Información georreferenciada</em></li>
+<li><em>Conocer el sistema de coordenadas de referencia</em></li>
+<li><em>Vectores en sus capas correspondientes</em></li>
+<li><em>Extensión X Y delimitada</em></li>
+</ul>
+<p>Una vez que tengamos el archivo DWG abierto en Draftsight y hayamos hecho las recomendaciones mínimas, procedemos a guardarlo como DXF:</p>
+<p><img src="/images/peek-2016-10-16-16-22.gif" alt="peek-2016-10-16-16-22"></p>
+<p><img src="https://qgismx.files.wordpress.com/2016/10/screenshot-from-2016-10-16-16-19-06.png?w=1024" alt="screenshot-from-2016-10-16-16-19-06"><img src="https://qgismx.files.wordpress.com/2016/10/screenshot-from-2016-10-16-16-20-02.png?w=1024" alt="screenshot-from-2016-10-16-16-20-02"></p>
+<p>Hecho lo anterios, cerramos Draftsight y abrimos QGIS.</p>
+<p>Dentro de QGIS añadimos capa vectorial y filtramos por &ldquo;AutoCAD DXF&rdquo;:</p>
+<p><img src="/images/screenshot-from-2016-10-16-16-26-44.png" alt="screenshot-from-2016-10-16-16-26-44"></p>
+<p>Abrimos el archivo y QGIS nos pedirá el sistema de coordenadas de referencia en el que se encuentra la información, se la asiganmos:</p>
+<p><img src="/images/screenshot-from-2016-10-16-16-27-03.png" alt="screenshot-from-2016-10-16-16-27-03"></p>
+<p>Después seleccionamos las entidades que contiene el archivo CAD y que queremos importar a QGIS, por cada entidad QGIS volverá a pedir el sistema de coordenadas de referencia.</p>
+<p><img src="/images/screenshot-from-2016-10-16-16-27-31.png" alt="screenshot-from-2016-10-16-16-27-31"></p>
+<p>A continuación, la información vectorial se desplegará dentro de QGIS:</p>
+<p><img src="https://qgismx.files.wordpress.com/2016/10/screenshot-from-2016-10-16-16-31-26.png?w=1024" alt="screenshot-from-2016-10-16-16-31-26"></p>
+<p>Por último, &ldquo;guardamos como&rdquo; shapefile (o el formato que queramos) cada un de las entidades que sean de nuestro interés:</p>
+<p><img src="/images/peek-2016-10-16-16-36.gif" alt="peek-2016-10-16-16-36"></p>
+<p>Dividir por capas nuestra información vectorial.</p>
+<p>Para dividir nuestras entidades de líneas y de puntos, con base a un atributo, en este caso verificamos que se encuentre el campo &ldquo;Layer&rdquo; en nuestros shapefiles recién exportados:</p>
+<p><img src="/images/screenshot-from-2016-10-20-21-17-53.png" alt="screenshot-from-2016-10-20-21-17-53"></p>
+<p>Después de esto y con la herramienta &ldquo;Split vector layer&rdquo; dividimos nuestro shapefile en múltiples capas de acuerdo al contenido del campo &ldquo;Layer&rdquo;:</p>
+<p>Menú &gt; Vector &gt; Data Management Tools &gt; Split vector layer</p>
+<p><img src="/images/peek-2016-10-20-21-23.gif" alt="peek-2016-10-20-21-23"></p>
+<p>Se genera una capa por cada atributo distinto, cuyo nombre corresponde al nombre de la capa madre, el campo por el que se dividió y el nombre de la capa.</p>
+<p>Aquí ya toca, depende de la información con la que estemos trabajando, hacer limpieza de las capas, renombrar las capas, convertir a polígonos, corregir campos, determinar si las capas son puntos, líneas o polígonos, etc.</p>
+<p><img src="/images/screenshot-from-2016-10-20-21-30-47.png" alt="screenshot-from-2016-10-20-21-30-47"></p>
+<p>Dudas o comentarios con gusto serán respondidos, saludos.</p>
+
+  </div>
+  <footer>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://qgismexico.gihub.io/categories/tutoriales">Tutoriales</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    
+    
+      <li class="tags">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="https://qgismexico.gihub.io/tags/"></a></li>
+          
+        </ul>
+      </li>
+    
+  
+</ul>
+
+  </footer>
+</article>
+
+
+<div class="pagination">
+  
+    <a href="/blog/cuando-creiamos-que-teniamos-todas-las-respuestas-de-pronto-cambiaron-todas-las-preguntas/" class="button"><div class="previous"><div>Cuando creíamos que teníamos todas las respuestas, de pronto, cambiaron todas las preguntas</div></div></a>
+  
+  
+    <a href="/blog/instalacion-de-orfeo-toolbox-para-qgis/" class="button"><div class="next"><div>Instalación de Orfeo Toolbox para QGIS</div></div></a>
+  
+</div>
+
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Posts recientes</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="/blog/qgis-ft-docker-sobre-centos-y-redhat/" class="image featured">
+    
+      <img src="/images/qgis_docker.png" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="/blog/qgis-ft-docker-sobre-centos-y-redhat/">QGIS ft Docker sobre CentOS y RedHat</a></h1>
+          <time class="published" datetime="">25 de Enero, 2019</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="/blog/ii-reunion-nacional-de-usuarios/" class="image featured">
+    
+      <img src="/images/banner-2.jpg" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="/blog/ii-reunion-nacional-de-usuarios/">II Reunión Nacional de Usuarios</a></h1>
+          <time class="published" datetime="">2 de Enero, 2019</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+  <a href="/blog/qgis-mexico-en-talent-land/" class="image featured">
+    
+      <img src="/images/56474620_794353227608375_1077595607960387584_n-2.jpg" alt="">
+    
+  </a>
+
+
+        </section>
+        <header>
+          <h1><a href="/blog/qgis-mexico-en-talent-land/">QGIS México en Talent Land</a></h1>
+          <time class="published" datetime="">11 de Enero, 2019</time>
+        </header>
+      </article>
+      
+      
+        <a href="/blog/" class="button">Ver más</a>
+      
+    </section>
+  
+
+  
+
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+        <li><a href="//github.com/qgismexico" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+<li><a href="//gitlab.com/qgismexico" target="_blank" rel="noopener" title="GitLab" class="fab fa-gitlab"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/qgismexico" target="_blank" rel="noopener" title="Facebook" class="fab fa-facebook"></a></li>
+
+
+<li><a href="//youtube.com/c/QGISM%c3%a9xico" target="_blank" rel="noopener" title="YouTube" class="fab fa-youtube"></a></li>
+
+
+
+
+
+<li><a href="//instagram.com/qgismexico" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/qgismexico" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:qgismexico@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2019
+      
+        QGIS México
+      
+    . <br>
+    Tema: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Adaptado de <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Impulsado por <a href='https://gohugo.io/' title='0.65.3' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.e0c399b948d3cf5c3a5e3badb94023d0b064a19ac39fd8cd79fb9f57fa4d1091.js" integrity="sha256-4MOZuUjTz1w6XjutuUAj0LBkoZrDn9jNefufV/pNEJE="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>
