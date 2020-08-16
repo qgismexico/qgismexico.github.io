@@ -192,7 +192,7 @@ button.btn { height: 50px; margin-right: -1px; margin-top: 15px; }
 ----------------------------------*/
 .bg-light { }
 .bg-primary { }
-.bg-default { background-color: #f7f6f1; }
+.bg-default { background-color: #f5f7f6; }
 .bg-white { background-color: #fff; }
 .outline { }
 .section-title { }
@@ -276,7 +276,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
    ----------------------*/
 
 .logo { }
-.top-bar { background-color: #f0efe8; border-bottom: #e3e2da 1px solid; padding-top: 7px; padding-bottom: 7px; }
+.top-bar { background-color: #f5f7f6; border-bottom: #e3e2da 1px solid; padding-top: 7px; padding-bottom: 7px; }
 .call-info { }
 .call-text { font-size: 13px; font-weight: 400; }
 .call-text strong { margin-left: 5px; }
@@ -331,7 +331,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 #navigation li:hover > ul > li { height: 43px; }
 #navigation ul ul ul { margin-left: 100%; top: 0; }
 #navigation.align-right ul ul ul { margin-left: 0; margin-right: 100%; }
-#navigation ul ul li a { padding: 14px 22px; width: 218px; font-size: 14px; letter-spacing: 0.5px; text-decoration: none; color: #60645f; font-weight: 600; background: #f0efe8; text-transform: uppercase; border-bottom: #e3e2da 1px solid; }
+#navigation ul ul li a { padding: 14px 22px; width: 218px; font-size: 14px; letter-spacing: 0.5px; text-decoration: none; color: #60645f; font-weight: 600; background: #f5f7f6; text-transform: uppercase; border-bottom: #e3e2da 1px solid; }
 #navigation ul ul li:last-child > a, #navigation ul ul li.last-item > a { border-bottom: 0; }
 #navigation ul ul li:hover > a, #navigation ul ul li a:hover { color: #589442; }
 #navigation ul ul li.has-sub > a:after { position: absolute; top: 16px; right: 11px; width: 8px; height: 2px; display: block; background: #dddddd; content: ''; }
@@ -431,7 +431,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 /*-------------------------
  9.2  Service / single / sidebar
 --------------------------*/
-.service-block { padding: 30px; margin-bottom: 30px; background-color: #f0efe8; border-radius: 6px; }
+.service-block { padding: 30px; margin-bottom: 30px; background-color: #f5f7f6; border-radius: 6px; }
 .service-block:hover { }
 .service-icon { margin-bottom: 30px; }
 .service-img img { margin-bottom: 30px; border-radius: 10px; border: 3px solid #fff; }
@@ -548,7 +548,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 .previous-next-title { font-size: 18px; line-height: 22px; margin-top: 20px; color: #333333; font-weight: 700; }
 
 /*----- Author-post -----*/
-.author-block { background-color: #f0efe8; padding: 40px; margin-bottom: 30px; border-radius: 10px; }
+.author-block { background-color: #f5f7f6; padding: 40px; margin-bottom: 30px; border-radius: 10px; }
 .author-post { }
 .author-img { }
 .author-title { font-size: 22px; line-height: 22px; }
@@ -576,12 +576,12 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 .childern { padding-left: 100px; }
 
 /*----- leave-Comments -----*/
-.leave-comments { background-color: #f0efe8; padding: 40px; margin-bottom: 30px; border-radius: 10px; }
+.leave-comments { background-color: #f5f7f6; padding: 40px; margin-bottom: 30px; border-radius: 10px; }
 
 /*------------------------
  12. Tour block 
 --------------------------*/
-.tour-block { padding: 30px; margin-bottom: 30px; background-color: #f0efe8; border-radius: 6px; }
+.tour-block { padding: 30px; margin-bottom: 30px; background-color: #f5f7f6; border-radius: 6px; }
 .tour-img img { margin-bottom: 30px; border-radius: 10px; border: 3px solid #fff; }
 .tour-content { text-align: center; }
 .tour-btn { margin-bottom: 8px; }
@@ -623,7 +623,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 .box-primary-color { background-color: #ffcf47; height: 160px; width: 160px; }
 .box-heading-color { background-color: #333333; height: 160px; width: 160px; }
 .box-secondary-color { background-color: #5f5f5f; height: 160px; width: 160px; }
-.box-bg-color { background-color: #f0efe8; height: 160px; width: 160px; }
+.box-bg-color { background-color: #f5f7f6; height: 160px; width: 160px; }
 
 /*==========  Non-Mobile First Method  ==========*/
 
