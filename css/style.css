@@ -291,7 +291,7 @@ img { width: auto; max-width: 100%; height: auto; margin: 0; padding: 0; border:
 /*--------------------------
     5.2 Navigations Regular
    ----------------------------*/
-.hero-section { background: url(../images/bannerQGISLATAM.png) no-repeat center; background-size: cover; }
+.hero-section { background: url(../images/banner-twitter.png) no-repeat center; background-size: cover; }
 .hero-section-caption { margin-top: 110px; margin-bottom: 110px; background-color: #00a767; border-radius: 6px; }
 .hero-title { color: #fff; font-size: 35px; font-weight: 100; line-height: 45px; margin-bottom: 25px; text-align: center;}
 #navigation { float: right; }
